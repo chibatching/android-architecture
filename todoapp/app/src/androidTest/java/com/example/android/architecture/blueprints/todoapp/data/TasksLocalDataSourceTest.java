@@ -16,6 +16,19 @@
 
 package com.example.android.architecture.blueprints.todoapp.data;
 
+import android.support.test.InstrumentationRegistry;
+import android.support.test.runner.AndroidJUnit4;
+import android.test.suitebuilder.annotation.LargeTest;
+
+import com.example.android.architecture.blueprints.todoapp.data.source.TasksDataSource;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import java.util.List;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
@@ -25,21 +38,6 @@ import static org.mockito.Matchers.anyList;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
-
-import android.support.test.InstrumentationRegistry;
-import android.support.test.runner.AndroidJUnit4;
-import android.test.suitebuilder.annotation.LargeTest;
-
-import com.example.android.architecture.blueprints.todoapp.data.source.TasksDataSource;
-import com.example.android.architecture.blueprints.todoapp.data.source.local.TasksDbHelper;
-import com.example.android.architecture.blueprints.todoapp.data.source.local.TasksLocalDataSource;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-
-import java.util.List;
 
 /**
  * Integration test for the {@link TasksDataSource}, which uses the {@link TasksDbHelper}.
@@ -58,7 +56,7 @@ public class TasksLocalDataSourceTest {
 
     @Before
     public void setup() {
-         mLocalDataSource = new TasksLocalDataSource(InstrumentationRegistry.getTargetContext());
+        mLocalDataSource = new TasksLocalDataSource(InstrumentationRegistry.getTargetContext());
     }
 
     @After
@@ -212,7 +210,7 @@ public class TasksLocalDataSourceTest {
 
                 boolean newTask1IdFound = false;
                 boolean newTask2IdFound = false;
-                for (Task task: tasks) {
+                for (Task task : tasks) {
                     if (task.getId().equals(newTask1.getId())) {
                         newTask1IdFound = true;
                     }

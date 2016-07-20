@@ -311,7 +311,7 @@ public class TasksFragment extends Fragment implements TasksContract.View {
     @Override
     public void showAddTask() {
         Intent intent = new Intent(getContext(), AddEditTaskActivity.class);
-        startActivityForResult(intent, AddEditTaskActivity.REQUEST_ADD_TASK);
+        startActivityForResult(intent, AddEditTaskActivity.Companion.getREQUEST_ADD_TASK());
     }
 
     @Override
@@ -319,7 +319,7 @@ public class TasksFragment extends Fragment implements TasksContract.View {
         // in it's own Activity, since it makes more sense that way and it gives us the flexibility
         // to show some Intent stubbing.
         Intent intent = new Intent(getContext(), TaskDetailActivity.class);
-        intent.putExtra(TaskDetailActivity.EXTRA_TASK_ID, taskId);
+        intent.putExtra(TaskDetailActivity.Companion.getEXTRA_TASK_ID(), taskId);
         startActivity(intent);
     }
 

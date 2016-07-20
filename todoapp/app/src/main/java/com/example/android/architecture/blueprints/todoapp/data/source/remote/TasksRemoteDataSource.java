@@ -27,13 +27,10 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import javax.inject.Inject;
-import javax.inject.Singleton;
 
 /**
  * Implementation of the data source that adds a latency simulating network.
  */
-@Singleton
 public class TasksRemoteDataSource implements TasksDataSource {
 
     private static final int SERVICE_LATENCY_IN_MILLIS = 5000;

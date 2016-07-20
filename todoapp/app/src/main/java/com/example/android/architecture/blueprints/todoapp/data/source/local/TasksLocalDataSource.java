@@ -29,16 +29,12 @@ import com.example.android.architecture.blueprints.todoapp.data.source.local.Tas
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.inject.Inject;
-import javax.inject.Singleton;
-
 import static com.google.common.base.Preconditions.checkNotNull;
 
 
 /**
  * Concrete implementation of a data source as a db.
  */
-@Singleton
 public class TasksLocalDataSource implements TasksDataSource {
 
     private TasksDbHelper mDbHelper;

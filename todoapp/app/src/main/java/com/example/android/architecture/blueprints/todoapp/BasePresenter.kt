@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.example.android.architecture.blueprints.todoapp;
+package com.example.android.architecture.blueprints.todoapp
 
-public interface BasePresenter {
+interface BasePresenter {
 
-    void start();
+    fun start()
 
 }

@@ -74,7 +74,6 @@ class StatisticsActivity : AppCompatActivity() {
             extend(appKodein())
             import(statisticsPresenterModule(statisticsFragment))
         })
-        statisticsPresenter
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

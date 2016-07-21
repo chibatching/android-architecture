@@ -65,7 +65,6 @@ class TaskDetailActivity : AppCompatActivity() {
             extend(appKodein())
             import(taskDetailPresenterModule(taskDetailFragment, taskId))
         })
-        taskDetailPresenter
     }
 
     override fun onSupportNavigateUp(): Boolean {

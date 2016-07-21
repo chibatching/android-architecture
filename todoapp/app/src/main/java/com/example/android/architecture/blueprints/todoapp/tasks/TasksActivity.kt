@@ -39,7 +39,7 @@ class TasksActivity : AppCompatActivity() {
 
     private val drawerLayout: DrawerLayout by lazy { findViewById(R.id.drawer_layout) as DrawerLayout }
 
-    val injector = KodeinInjector()
+    private val injector = KodeinInjector()
 
     private val tasksPresenter: TasksContract.Presenter by injector.instance()
 

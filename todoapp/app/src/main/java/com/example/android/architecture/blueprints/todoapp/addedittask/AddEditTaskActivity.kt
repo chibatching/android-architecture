@@ -34,7 +34,8 @@ import com.github.salomonbrys.kodein.instance
  */
 class AddEditTaskActivity : AppCompatActivity() {
 
-    val injector = KodeinInjector()
+    private val injector = KodeinInjector()
+
     private val addEditTaskPresenter: AddEditTaskContract.Presenter by injector.instance()
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -34,7 +34,7 @@ import com.github.salomonbrys.kodein.instance
  */
 class TaskDetailActivity : AppCompatActivity() {
 
-    val injector = KodeinInjector()
+    private val injector = KodeinInjector()
 
     private val taskDetailPresenter: TaskDetailContract.Presenter by injector.instance()
 

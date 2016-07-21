@@ -79,7 +79,6 @@ dependencies {
     compile "com.android.support.test.espresso:espresso-idling-resource:$rootProject.espressoVersion"
     compile "com.google.guava:guava:$rootProject.guavaVersion"
 
-    compile 'com.github.salomonbrys.kodein:kodein:3.0.0-beta6'
     compile 'com.github.salomonbrys.kodein:kodein-android:3.0.0-beta6'
 
     // Dependencies for local unit tests

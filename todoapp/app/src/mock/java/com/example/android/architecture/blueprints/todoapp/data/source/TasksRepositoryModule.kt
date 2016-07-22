@@ -12,5 +12,4 @@ import com.github.salomonbrys.kodein.singleton
 val tasksRepositoryModule = Kodein.Module {
     bind<TasksDataSource>("Local") with singleton { TasksLocalDataSource(instance()) }
     bind<TasksDataSource>("Remote") with singleton { FakeTasksRemoteDataSource() }
-    bind<TasksRepository>() with singleton { TasksRepository(instance("Remote"), instance("Local")) }
 }

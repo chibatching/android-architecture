@@ -9,7 +9,7 @@ import com.github.salomonbrys.kodein.*
 class ToDoApplication : Application(), KodeinAware {
 
     override val kodein: Kodein by Kodein.lazy {
-        import(tasksRepositoryModule)
+        import(tasksRepositoryModule())
         import(applicationModule(this@ToDoApplication))
         bind<TasksRepository>() with singleton { TasksRepository(instance("Remote"), instance("Local")) }
     }

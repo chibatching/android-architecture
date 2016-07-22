@@ -9,7 +9,7 @@ import com.github.salomonbrys.kodein.singleton
 /**
  * This is used by Dagger to inject the required arguments into the [TasksRepository].
  */
-val tasksRepositoryModule = Kodein.Module {
+fun tasksRepositoryModule() = Kodein.Module {
     bind<TasksDataSource>("Local") with singleton { TasksLocalDataSource(instance()) }
     bind<TasksDataSource>("Remote") with singleton { FakeTasksRemoteDataSource() }
 }

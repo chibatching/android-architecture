@@ -34,6 +34,7 @@ import com.github.salomonbrys.kodein.Kodein
 import com.github.salomonbrys.kodein.KodeinInjector
 import com.github.salomonbrys.kodein.android.appKodein
 import com.github.salomonbrys.kodein.instance
+import com.github.salomonbrys.kodein.provider
 
 class TasksActivity : AppCompatActivity() {
 
@@ -72,6 +73,7 @@ class TasksActivity : AppCompatActivity() {
         injector.inject(Kodein {
             extend(appKodein())
             import(tasksPresenterModule(tasksFragment))
+            bind<TasksContract.Presenter>() with provider { TasksPresenter(instance(), instance()) }
         })
 
 

@@ -24,10 +24,8 @@ import android.support.v7.widget.Toolbar
 import com.example.android.architecture.blueprints.todoapp.R
 import com.example.android.architecture.blueprints.todoapp.util.ActivityUtils
 import com.example.android.architecture.blueprints.todoapp.util.EspressoIdlingResource
-import com.github.salomonbrys.kodein.Kodein
-import com.github.salomonbrys.kodein.KodeinInjector
+import com.github.salomonbrys.kodein.*
 import com.github.salomonbrys.kodein.android.appKodein
-import com.github.salomonbrys.kodein.instance
 
 /**
  * Displays an add or edit task screen.
@@ -73,6 +71,7 @@ class AddEditTaskActivity : AppCompatActivity() {
         injector.inject(Kodein {
             extend(appKodein())
             import(addEditTaskPresenterModule(addEditTaskFragment, taskId))
+            bind<AddEditTaskContract.Presenter>() with provider { AddEditTaskPresenter(instanceOrNull("TaskId"), instance(), instance()) }
         })
     }
 

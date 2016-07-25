@@ -28,6 +28,7 @@ import com.github.salomonbrys.kodein.Kodein
 import com.github.salomonbrys.kodein.KodeinInjector
 import com.github.salomonbrys.kodein.android.appKodein
 import com.github.salomonbrys.kodein.instance
+import com.github.salomonbrys.kodein.provider
 
 /**
  * Displays task details screen.
@@ -64,6 +65,7 @@ class TaskDetailActivity : AppCompatActivity() {
         injector.inject(Kodein {
             extend(appKodein())
             import(taskDetailPresenterModule(taskDetailFragment, taskId))
+            bind<TaskDetailContract.Presenter>() with provider { TaskDetailPresenter(instance("TaskId"), instance(), instance()) }
         })
     }
 

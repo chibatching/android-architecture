@@ -31,6 +31,7 @@ import com.github.salomonbrys.kodein.Kodein
 import com.github.salomonbrys.kodein.KodeinInjector
 import com.github.salomonbrys.kodein.android.appKodein
 import com.github.salomonbrys.kodein.instance
+import com.github.salomonbrys.kodein.provider
 
 /**
  * Show statistics for tasks.
@@ -73,6 +74,7 @@ class StatisticsActivity : AppCompatActivity() {
         injector.inject(Kodein {
             extend(appKodein())
             import(statisticsPresenterModule(statisticsFragment))
+            bind<StatisticsContract.Presenter>() with provider { StatisticsPresenter(instance(), instance()) }
         })
     }
 
